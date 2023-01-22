@@ -1,0 +1,23 @@
+﻿<Window x:Class="DesktopClock.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:DesktopClock"
+        mc:Ignorable="d" Title="MainWindow" Height="70" Width="140" AllowsTransparency="True" Background="Transparent" x:Name="This"
+		Topmost="True" WindowStyle="None" ShowInTaskbar="False" Loaded="Window_Loaded">
+	<Window.Resources>
+		<Style x:Key="TextBlockStyle" TargetType="{x:Type TextBlock}">
+			<Setter Property="FontFamily" Value="{StaticResource OrangeFont}"/>
+			<Setter Property="FontSize" Value="55"/>
+			<Setter Property="VerticalAlignment" Value="Bottom"/>
+			<Setter Property="HorizontalAlignment" Value="Right"/>
+			<Setter Property="Foreground" Value="Black"/>
+		</Style>
+	</Window.Resources>
+
+	<Canvas x:Name="CanvasMain" Margin="0,0,10,0">
+		<TextBlock Text="{Binding ElementName=This, Path=DisplayTime}" Style="{StaticResource TextBlockStyle}" Canvas.Bottom="2" Canvas.Right="2" />
+		<TextBlock Text="{Binding ElementName=This, Path=DisplayTime}" Style="{StaticResource TextBlockStyle}" Canvas.Bottom="2" Canvas.Right="4" />
+		<TextBlock Text="{Binding ElementName=This, Path=DisplayTime}" Style="{StaticResource TextBlockStyle}" Canvas.Bottom="4" Canvas.Right="2" />
+		<TextBlock Text="{Binding ElementName=This, Path=DisplayTime}" Style="{StaticResource TextBlockStyle}" Canvas.Bottom="4" Canvas.Right="4" />
+		<TextBlock Text="{Binding ElementName=This, Path=DisplayTime}" Style="{StaticResource TextBlockStyle}" Foreground="White" Canvas.Bottom="3" Canvas.Right="3" />
+	</Canvas>
+</Window>
